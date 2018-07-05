@@ -1,0 +1,9 @@
+{
+    "name": "Star Quiz - Mostre que você sabe tudo de Star Wars",
+    "short_name": "Star Quiz",
+    "start_url": "/?home=true",
+    "theme_color": "#000000",
+    "background_color": "#FFFFFF",
+    "display": "fullscreen",
+    "orientation": "portrait"
+  }

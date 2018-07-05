@@ -1,0 +1,30 @@
+{
+  "name": "starquiz",
+  "version": "0.0.1",
+  "description": "Quiz sobre personagens de StarWars",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.s2it.com.br:gabriel.araujo/starquiz.git"
+  },
+  "keywords": [
+    "html",
+    "javascript",
+    "css"
+  ],
+  "author": "Gabriel Araujo",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler": "^1.9.4"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  }
+}
