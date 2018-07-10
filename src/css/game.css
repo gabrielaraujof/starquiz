@@ -1,0 +1,8 @@
+.game__box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+}
