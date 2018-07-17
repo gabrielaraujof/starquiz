@@ -1,0 +1,11 @@
+:root {
+    /* Colors */
+    --cl-black: #000;
+    --cl-grey: #666;
+    --cl-white: #fff;
+    --warning: #f45641;
+
+    /* Spacing */
+    --default-space: 1rem;
+    --double-space: calc(var(--default-space) * 2);
+}

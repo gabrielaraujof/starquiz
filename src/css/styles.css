@@ -1,4 +1,6 @@
+@import url('./variables.css');
 @import url('./base.css');
-@import url('./game.css');
 @import url('./character.css');
+@import url('./game.css');
+@import url('./timer.css');
 

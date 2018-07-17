@@ -1,0 +1,37 @@
+.game__timer {
+    --gap: 2.5rem;
+
+    position: fixed;
+    /* right: var(--gap); */
+    /* top: var(--gap); */
+    top: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--default-space);
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    /* border: 2px solid var(--cl-black); */
+    /* border-radius: calc(var(--default-space) * 2 + var(--double-space)); */
+    background-color: var(--cl-white);
+    font-size: var(--double-space);
+    line-height: 1;
+}
+
+.game__timer.countdown {
+    color: var(--warning);
+}
+
+.game__timer img {
+    --image-size: var(--double-space);
+
+    /* float: left; */
+    display: inline-block;
+    width: var(--image-size);
+    height: var(--image-size);
+    margin-right: var(--default-space);
+}
+
+.game__timer .game__timer__seconds::before {
+    content: ':';
+}
