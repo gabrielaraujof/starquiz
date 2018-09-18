@@ -1,8 +1,8 @@
 .game__box {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template: repeat(auto-fill, minmax(27.5rem, 1fr)) / repeat(auto-fill, minmax(20rem, 1fr));
     width: 80vw;
+    max-width: 130rem;
     margin: auto;
 }
