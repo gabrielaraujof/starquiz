@@ -1,4 +1,5 @@
 import fonts from '../public/images/characters/*.jpg';
+import makeService from './swapi';
 
 const randomPic = () => {
   const min = 1;
@@ -8,4 +9,14 @@ const randomPic = () => {
 };
 
 const imgs = document.getElementsByClassName('character__image');
-imgs.forEach(img => img.setAttribute('src', randomPic()));
+Array.from(imgs).forEach((img => img.setAttribute('src', randomPic())));
+
+
+const Service = makeService('https://swapi.co/api');
+const service = new Service();
+
+(async function load() {
+  const characters = await service.getAll(2);
+  console.log(characters);
+  console.log(await service.expandCharacter(characters[0]));
+}());

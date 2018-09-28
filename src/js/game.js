@@ -1,6 +1,6 @@
-function Game(service, { timerLimit }) {
-  if (!(this instanceof Game)) {
-    return new Game(service, { timerLimit });
+export default service => function SWQuiz({ timerLimit }) {
+  if (!(this instanceof SWQuiz)) {
+    return new SWQuiz(service, { timerLimit });
   }
 
   const tipsTaken = [];
@@ -16,9 +16,9 @@ function Game(service, { timerLimit }) {
     return normalize(actual) === normalize(guess);
   }
 
-  Game.prototype.isRunning = () => isRunning;
+  SWQuiz.prototype.isRunning = () => isRunning;
 
-  Game.prototype.start = () => {
+  SWQuiz.prototype.start = () => {
     isRunning = true;
 
     const intervalId = setInterval(() => {
@@ -31,7 +31,7 @@ function Game(service, { timerLimit }) {
     }, timer * 1000);
   };
 
-  Game.prototype.guess = (characterId, guessName) => {
+  SWQuiz.prototype.guess = (characterId, guessName) => {
     if (!isRunning) throw Error('Your time has ended!');
 
     const character = service.get(characterId);
@@ -52,15 +52,13 @@ function Game(service, { timerLimit }) {
     }
   };
 
-  Game.prototype.getTips = (characterId) => {
+  SWQuiz.prototype.getTips = (characterId) => {
     tipsTaken.push(characterId);
     const character = service.get(characterId);
     return character.tips;
   };
 
-  Game.prototype.totalPoints = () => points;
+  SWQuiz.prototype.totalPoints = () => points;
 
   return this;
-}
-
-export default service => (...args) => Game(service, ...args);
+};
