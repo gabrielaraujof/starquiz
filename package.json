@@ -30,6 +30,14 @@
     "parcel-bundler": "^1.9.7"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0"
+    "babel-runtime": "^6.26.0",
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./tests/setup.js"
+    ]
   }
 }

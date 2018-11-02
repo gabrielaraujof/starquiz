@@ -1,14 +1,16 @@
 import makeService from '../src/js/swapi';
+import charactersMock from './__mocks__/characters.json';
 
-fetch = jest.fn(); // eslint-disable-line no-global-assign
-
-const baseUrl = 'https://example.com/api';
+const { fetch: fetchGlobal } = global;
 
 describe('Service', () => {
-  const Service = makeService(baseUrl);
+  const Service = makeService('https://swapi.co/api');
   let service;
 
   beforeEach(() => {
+    global.fetch = jest.fn(() => ({
+      json: jest.fn(() => charactersMock),
+    }));
     service = new Service();
   });
 
@@ -17,27 +19,12 @@ describe('Service', () => {
   });
 
   describe('getAll', () => {
-    beforeEach(() => {
-      fetch.mockReturnValue(Promise.resolve({
-        json: () => Promise.resolve({
-          results: [
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-          ],
-        }),
-      }));
-    });
-
     test('10 characters at time', async () => {
       await expect(service.getAll()).resolves.toHaveLength(10);
     });
   });
+});
+
+afterAll(() => {
+  global.fetch = fetchGlobal;
 });
