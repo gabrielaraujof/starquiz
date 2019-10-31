@@ -27,7 +27,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "jest": "^23.6.0",
-    "parcel-bundler": "^1.9.7"
+    "parcel-bundler": "^1.10.0"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0"
